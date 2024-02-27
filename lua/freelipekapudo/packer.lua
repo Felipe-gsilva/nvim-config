@@ -18,7 +18,10 @@ return require('packer').startup(function(use)
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
 	use('github/copilot.vim')
-	use('rebelot/kanagawa.nvim')
+  use('rose-pine/neovim')
+  use('rebelot/kanagawa.nvim')
+  use('andweeb/presence.nvim')
+  use('norcalli/nvim-colorizer.lua')
 	use {
 		'nvimdev/dashboard-nvim',
 		event = 'VimEnter',
