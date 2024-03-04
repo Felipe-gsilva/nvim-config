@@ -97,6 +97,11 @@ _G.packer_plugins = {
     path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/opt/dashboard-nvim",
     url = "https://github.com/nvimdev/dashboard-nvim"
   },
+  ["deferred-clipboard.nvim"] = {
+    loaded = true,
+    path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/start/deferred-clipboard.nvim",
+    url = "https://github.com/EtiamNullam/deferred-clipboard.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/start/harpoon",
