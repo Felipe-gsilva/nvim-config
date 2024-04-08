@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
 		end,
 		requires = {'nvim-tree/nvim-web-devicons'}
 	}
+  use('nvim-tree/nvim-tree.lua')
 	use('vim-airline/vim-airline')
 	use {
 		'VonHeikemen/lsp-zero.nvim',
