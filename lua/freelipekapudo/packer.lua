@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
   use('rebelot/kanagawa.nvim')
   use('andweeb/presence.nvim')
   use('norcalli/nvim-colorizer.lua')
+  use('EtiamNullam/deferred-clipboard.nvim')
 	use {
 		'nvimdev/dashboard-nvim',
 		event = 'VimEnter',
