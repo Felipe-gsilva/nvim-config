@@ -117,6 +117,16 @@ _G.packer_plugins = {
     path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -187,6 +197,11 @@ _G.packer_plugins = {
     path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   undotree = {
     loaded = true,
     path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/start/undotree",
@@ -201,6 +216,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["zenbones.nvim"] = {
+    loaded = true,
+    path = "/home/felipe-gsilva/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
+    url = "https://github.com/mcchrish/zenbones.nvim"
   }
 }
 

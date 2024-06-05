@@ -19,34 +19,49 @@ return require('packer').startup(function(use)
 	use('tpope/vim-fugitive')
 	use('github/copilot.vim')
   use('rose-pine/neovim')
+  use('folke/tokyonight.nvim')
   use('rebelot/kanagawa.nvim')
+
+  -- install without yarn or npm
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+
+  use {
+    "mcchrish/zenbones.nvim",
+    requires = "rktjmp/lush.nvim"
+  }
   use('andweeb/presence.nvim')
   use('norcalli/nvim-colorizer.lua')
   use('EtiamNullam/deferred-clipboard.nvim')
-	use {
-		'nvimdev/dashboard-nvim',
-		event = 'VimEnter',
-		config = function()
-			require('dashboard').setup {
-				theme = 'hyper'
-			}
-		end,
-		requires = {'nvim-tree/nvim-web-devicons'}
-	}
+  use {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        theme = 'hyper'
+      }
+    end,
+    requires = {'nvim-tree/nvim-web-devicons'}
+  }
   use('nvim-tree/nvim-tree.lua')
-	use('vim-airline/vim-airline')
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v3.x',
-		requires = {
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-nvim-lsp'},
-			{'L3MON4D3/LuaSnip'},
-		}
-	} 
+  use('vim-airline/vim-airline')
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    requires = {
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'L3MON4D3/LuaSnip'},
+    }
+  } 
 end)
