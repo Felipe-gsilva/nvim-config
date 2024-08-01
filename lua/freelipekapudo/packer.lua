@@ -21,12 +21,15 @@ return require('packer').startup(function(use)
   use('rose-pine/neovim')
   use('folke/tokyonight.nvim')
   use('rebelot/kanagawa.nvim')
-  use ('EdenEast/nightfox.nvim') 
-  use { "catppuccin/nvim", as = "catppuccin" }
-  use {"bluz71/vim-moonfly-colors"}
+  use('EdenEast/nightfox.nvim') 
+  use{ "catppuccin/nvim", as = "catppuccin" }
+  use('bluz71/vim-moonfly-colors')
 
   -- conjure
-  use {'Olical/conjure'}
+  use{'Olical/conjure'}
+
+  --tmux-vim
+  use('christoomey/vim-tmux-navigator')
 
   -- install without yarn or npm
   use({

@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-	ensure_installed = {"c","cpp" ,"lua", "vim", "vimdoc", "query", "php", "html", "json", "css", "java"},
+	ensure_installed = {"c","cpp" ,"lua", "vim", "vimdoc", "query", "html", "json", "css", "java", "clojure"},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = true, 
@@ -10,9 +10,9 @@ require'nvim-treesitter.configs'.setup {
 
 	highlight = {
 		enable = true, 
-		additional_vim_regex_highlighting = false,
+		additional_vim_regex_highlighting = true,
 	},
 	indent = {
-		enable = true
+		enable = false
 	},
 }
