@@ -1,3 +1,7 @@
+require("cmp").config.formatting = {
+  format = require("tailwindcss-colorizer-cmp").formatter
+}
+
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
@@ -17,7 +21,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {'rust_analyzer','clangd' },
+	ensure_installed = {'rust_analyzer','clangd'},
 	handlers = {
 		lsp_zero.default_setup,
 		lua_ls = function()
