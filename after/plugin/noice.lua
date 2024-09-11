@@ -97,4 +97,3 @@ require("noice").setup({
     },
   },
 })
-
