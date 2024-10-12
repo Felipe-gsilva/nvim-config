@@ -68,4 +68,7 @@
                                                         fallback (vim.loop.cwd)
                                                         patterns [:project.clj :deps.edn :build.boot :shadow-cljs.edn :.git :bb.edn]
                                                         root ((util.root_pattern patterns) pattern)]
-                                                    (or root fallback)))})))}]
+                                                    (or root fallback)))})
+              (lsp.clangd.setup {:on_attach on_attach
+                                 :capabilities capabilities})
+              ))}]

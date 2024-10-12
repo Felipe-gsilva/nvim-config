@@ -13,6 +13,7 @@
   "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "a77af2e764c5ed4038d27d1c463fa49cd4794e07" },
   "nfnl": { "branch": "main", "commit": "60b2ab7051cf2f631bc03274b56061136d1f9177" },
+  "noice.nvim": { "branch": "main", "commit": "df448c649ef6bc5a6a633a44f2ad0ed8d4442499" },
   "nui.nvim": { "branch": "main", "commit": "b58e2bfda5cea347c9d58b7f11cf3012c7b3953f" },
   "nvim-autopairs": { "branch": "master", "commit": "ee297f215e95a60b01fde33275cc3c820eddeebe" },
   "nvim-cmp": { "branch": "main", "commit": "ae644feb7b67bf1ce4260c231d1d4300b19c6f30" },
@@ -28,5 +29,6 @@
   "telescope.nvim": { "branch": "master", "commit": "df534c3042572fb958586facd02841e10186707c" },
   "tokyonight.nvim": { "branch": "main", "commit": "2c85fad417170d4572ead7bf9fdd706057bd73d7" },
   "undotree": { "branch": "master", "commit": "78b5241191852ffa9bb5da5ff2ee033160798c3b" },
-  "vim-moonfly-colors": { "branch": "master", "commit": "7de26ecf5216fffd974ce8f3e4793b8bb1c70ad0" }
+  "vim-moonfly-colors": { "branch": "master", "commit": "7de26ecf5216fffd974ce8f3e4793b8bb1c70ad0" },
+  "vimtex": { "branch": "master", "commit": "a4db0ee3271f58a08596ba853ea1e167f41ff9d6" }
 }
