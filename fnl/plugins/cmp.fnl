@@ -1,4 +1,4 @@
-(local cmp-src-menu-items
+  (local cmp-src-menu-items
   {:buffer "buff"
    :conjure "conj"
    :nvim_lsp "lsp"
@@ -30,9 +30,9 @@
               (cmp.setup {:formatting {:format (fn [entry item]
                                                  (set item.menu (or (. cmp-src-menu-items entry.source.name) ""))
                                                  item)}
-                          :mapping {:<C-p> (cmp.mapping.select_prev_item)
+                          :mapping {:<C-b> (cmp.mapping.select_prev_item)
                                     :<C-n> (cmp.mapping.select_next_item)
-                                    :<C-b> (cmp.mapping.scroll_docs (- 4))
+                                    :<C-bb> (cmp.mapping.scroll_docs (- 4))
                                     :<C-f> (cmp.mapping.scroll_docs 4)
                                     :<C-Space> (cmp.mapping.complete)
                                     :<C-e> (cmp.mapping.close)
