@@ -6,6 +6,6 @@ local function _1_()
   vim.keymap.set("n", "<leader>ef", ":ConjureEvalFile")
   vim.keymap.set("n", "<leader>eb", ":ConjureEvalBuf")
   vim.keymap.set("n", "<leader>er", ":ConjureEvalCurrentForm")
-  return vim.keymap.set("n", "<leader>sv", ":ConjureLogVSlit")
+  return vim.keymap.set("n", "<leader>sv", ":ConjureLogVSplit<CR>", {noremap = true, silent = true})
 end
 return {{"Olical/conjure", branch = "master", init = _1_}}

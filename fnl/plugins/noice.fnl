@@ -4,11 +4,21 @@
   :config (fn []
             (let [noice (require "noice")]
               (noice.setup {:views 
-                            {:cmdline_popup 
-                             {:positon 
-                              {:row "50%" 
-                               :col "50%"}}}
-                            :messages {:enabled true
-                                       :view "notify"
-                                       :view-error "notify"
-                                       :view-warn "notify"}})))}]
+                            {:cmdline_popup {:position 
+                                             {:row "45%"
+                                              :col "50%"}
+                                             :size 
+                                             {:width 60
+                                              :height "auto"}}
+                             :popupmenu {:relative "editor"
+                                         :size {:width 60
+                                                :height 10}
+                                         :position {:row "60%"
+                                                    :col "50%"}
+                                         :border {:style "rounded"}
+                                         :win-options {:Normal "Normal"
+                                                       :FloatBorder "DiagnosticInfo"}}
+                             :messages {:enabled true
+                                        :view "notify"
+                                        :view-error "notify"
+                                        :view-warn "notify"}}})))}]

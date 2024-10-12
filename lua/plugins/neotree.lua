@@ -1,6 +1,6 @@
 -- [nfnl] Compiled from fnl/plugins/neotree.fnl by https://github.com/Olical/nfnl, do not edit.
 local function _1_()
-  vim.keymap.set("n", "<leader>f", ":Neotree toggle<CR>", {noremap = true, silent = true})
+  vim.keymap.set("n", "<leader>ff", ":Neotree toggle<CR>", {noremap = true, silent = true})
   local function _2_()
     return vim.cmd("Neotree")
   end
