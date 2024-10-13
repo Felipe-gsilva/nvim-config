@@ -5,7 +5,7 @@
             (let [noice (require "noice")]
               (noice.setup {:views 
                             {:cmdline_popup {:position 
-                                             {:row "45%"
+                                             {:row 18 
                                               :col "50%"}
                                              :size 
                                              {:width 60
@@ -13,7 +13,7 @@
                              :popupmenu {:relative "editor"
                                          :size {:width 60
                                                 :height 10}
-                                         :position {:row "60%"
+                                         :position {:row 21 
                                                     :col "50%"}
                                          :border {:style "rounded"}
                                          :win-options {:Normal "Normal"

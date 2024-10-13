@@ -2,7 +2,12 @@
 local function _1_()
   vim.keymap.set("n", "<leader>ff", ":Neotree toggle<CR>", {noremap = true, silent = true})
   local function _2_()
-    return vim.cmd("Neotree")
+    local bufname = vim.fn.expand("%")
+    if ((bufname == "") or vim.fn.isdirectory(bufname)) then
+      return vim.cmd("Neotree")
+    else
+      return nil
+    end
   end
   return vim.api.nvim_create_autocmd("VimEnter", {callback = _2_})
 end

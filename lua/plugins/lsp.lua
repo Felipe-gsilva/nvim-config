@@ -49,7 +49,6 @@ local function _1_()
     return (root or fallback)
   end
   lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities, root_dir = _4_})
-  lsp.clangd.setup({on_attach = on_attach, capabilities = capabilities})
-  return lsp["fennel-language-server"].setup({filetypes = {"fennel", "fnl"}})
+  return lsp.clangd.setup({on_attach = on_attach, capabilities = capabilities})
 end
 return {{"neovim/nvim-lspconfig", config = _1_}}

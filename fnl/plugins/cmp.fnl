@@ -1,4 +1,4 @@
-  (local cmp-src-menu-items
+(local cmp-src-menu-items
   {:buffer "buff"
    :conjure "conj"
    :nvim_lsp "lsp"
