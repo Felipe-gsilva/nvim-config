@@ -6,13 +6,11 @@
            (local dap (require :dap))
            (local dapui (require :dapui))
 
-           ;; Configure GDB adapter
            (set dap.adapters.gdb
                 {:type "executable"
                  :command "gdb"
                  :args ["-i" "dap"]})
 
-           ;; Configure UI layout
            (dapui.setup
              {:layouts
               [{:elements [:scopes :breakpoints :stacks :watches]
@@ -22,16 +20,13 @@
                 :size 0.25
                 :position "bottom"}]
 
-              ;; Configure floating window elements
               :floating {:max_height 800;; These can be integers or nil
                          :max_width 600;; Floats will be treated as percentage of screen
                          :border "single"  ;; Border style: 'single', 'double', 'rounded'
                          :mappings {:close "<ESC>"}}
 
-              ;; Configure what UI elements show in windows
               :windows {:indent 2}
 
-              ;; Controls & elements render settings
               :controls {:enabled true}
               :element_mappings {}
               :expand_lines true
@@ -39,14 +34,12 @@
               :render {:indent 2
                        :max_value_lines 100}})
 
-           ;; Integrate DAP events with UI
            (set dap.listeners.after.event_initialized.dapui_config [(dapui.open)])
 
            (set dap.listeners.before.event_terminated.dapui_config [(dapui.close)])
 
            (set dap.listeners.before.event_exited.dapui_config [(dapui.close)])
 
-           ;; Keymaps for UI control
            (vim.keymap.set :n "<leader>dui" ":lua require'dapui'.toggle()<CR>" 
                            {:silent true :noremap true :desc "Toggle DAP UI"})
 
