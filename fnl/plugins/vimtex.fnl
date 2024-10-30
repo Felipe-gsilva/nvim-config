@@ -2,4 +2,4 @@
   :lazy false
   :tag "v2.15"
   :init (fn []
-          (set vim.g.vimtex_view_method "zathura"))}]
+          (set vim.g.vimtex_view_method "okular"))}]
