@@ -1,5 +1,16 @@
 -- [nfnl] Compiled from fnl/plugins/dap.fnl by https://github.com/Olical/nfnl, do not edit.
 local function _1_()
+  return "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>"
+end
+local function _2_()
+  local widgets = require("dap.ui.widgets")
+  return widgets.centered_float(widgets.frames())
+end
+local function _3_()
+  local widgets = require("dap.ui.widgets")
+  return widgets.centered_float(widgets.scopes())
+end
+local function _4_()
   local dap = require("dap")
   local dapui = require("dapui")
   dap.adapters.gdb = {type = "executable", command = "gdb", args = {"-i", "dap"}}
@@ -7,39 +18,20 @@ local function _1_()
   dap.listeners.after.event_initialized.dapui_config = {dapui.open()}
   dap.listeners.before.event_terminated.dapui_config = {dapui.close()}
   dap.listeners.before.event_exited.dapui_config = {dapui.close()}
-  vim.keymap.set("n", "<leader>dui", ":lua require'dapui'.toggle()<CR>", {silent = true, noremap = true, desc = "Toggle DAP UI"})
-  vim.keymap.set("n", "<leader>dh", ":lua require'dap.ui.widgets'.hover()<CR>", {silent = true, noremap = true, desc = "DAP Hover"})
-  vim.keymap.set("n", "<leader>dp", ":lua require'dap.ui.widgets'.preview()<CR>", {silent = true, noremap = true, desc = "DAP Preview"})
-  local function _2_()
-    local widgets = require("dap.ui.widgets")
-    return widgets.centered_float(widgets.frames())
-  end
-  vim.keymap.set("n", "<leader>df", _2_, {silent = true, noremap = true, desc = "DAP Frames"})
-  local function _3_()
-    local widgets = require("dap.ui.widgets")
-    return widgets.centered_float(widgets.scopes())
-  end
-  vim.keymap.set("n", "<leader>ds", _3_, {silent = true, noremap = true, desc = "DAP Scopes"})
-  local function _4_()
-    return vim.fn.input("Path to executable: ", (vim.fn.getcwd() .. "/"), "file")
-  end
   local function _5_()
     return vim.fn.input("Path to executable: ", (vim.fn.getcwd() .. "/"), "file")
   end
   local function _6_()
+    return vim.fn.input("Path to executable: ", (vim.fn.getcwd() .. "/"), "file")
+  end
+  local function _7_()
     local name = vim.fn.input("Executable name (filter): ")
     return require("dap.utils").pick_process({filter = name})
   end
-  local function _7_()
+  local function _8_()
     return vim.fn.input("Path to executable: ", (vim.fn.getcwd() .. "/"), "file")
   end
-  dap.configurations.c = {{name = "Launch", type = "gdb", request = "launch", program = _4_, cwd = "${workspaceFolder}", stopAtBeginningOfMainSubprogram = false}, {name = "Select and attach to process", type = "gdb", request = "attach", program = _5_, pid = _6_, cwd = "${workspaceFolder}"}, {name = "Attach to gdbserver :1234", type = "gdb", request = "attach", target = "localhost:1234", program = _7_, cwd = "${workspaceFolder}"}}
-  vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>", {silent = true, noremap = true})
-  vim.keymap.set("n", "<F1>", ":lua require'dap'.step_into()<CR>", {silent = true, noremap = true})
-  vim.keymap.set("n", "<F2>", ":lua require'dap'.step_over()<CR>", {silent = true, noremap = true})
-  vim.keymap.set("n", "<F3>", ":lua require'dap'.step_out()<CR>", {silent = true, noremap = true})
-  vim.keymap.set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", {silent = true, noremap = true})
-  vim.keymap.set("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", {silent = true, noremap = true})
-  return vim.keymap.set("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>", {silent = true, noremap = true})
+  dap.configurations.c = {{name = "Launch", type = "gdb", request = "launch", program = _5_, cwd = "${workspaceFolder}", stopAtBeginningOfMainSubprogram = false}, {name = "Select and attach to process", type = "gdb", request = "attach", program = _6_, pid = _7_, cwd = "${workspaceFolder}"}, {name = "Attach to gdbserver :1234", type = "gdb", request = "attach", target = "localhost:1234", program = _8_, cwd = "${workspaceFolder}"}}
+  return nil
 end
-return {{"rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}, branch = "master", config = _1_}}
+return {{"rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}, branch = "master", keys = {{"<F5>", "<cmd>lua require('dap').continue()<cr>", {desc = "DAP Continue"}}, {"<F1>", "<cmd>lua require('dap').step_into()<cr>", {desc = "DAP Step Into"}}, {"<F2>", "<cmd>lua require('dap').step_over()<cr>", {desc = "DAP Step Over"}}, {"<F3>", "<cmd>lua require('dap').step_out()<cr>", {desc = "DAP Step Out"}}, {"<leader>b", "<cmd>lua require('dap').toggle_breakpoint()<cr>", {desc = "DAP Toggle Breakpoint"}}, {"<leader>B", _1_, {desc = "DAP Conditional Breakpoint"}}, {"<leader>dr", "<cmd>lua require('dap').repl.open()<cr>", {desc = "DAP Open REPL"}}, {"<leader>dui", "<cmd>lua require('dapui').toggle()<cr>", {desc = "Toggle DAP UI"}}, {"<leader>dh", "<cmd>lua require('dap.ui.widgets').hover()<cr>", {desc = "DAP Hover"}}, {"<leader>dp", "<cmd>lua require('dap.ui.widgets').preview()<cr>", {desc = "DAP Preview"}}, {"<leader>df", _2_, {desc = "DAP Frames"}}, {"<leader>ds", _3_, {desc = "DAP Scopes"}}}, config = _4_}}
