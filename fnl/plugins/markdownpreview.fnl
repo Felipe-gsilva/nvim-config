@@ -1,9 +1,10 @@
 [{1 :MeanderingProgrammer/render-markdown.nvim
   :dependencies [:nvim-treesitter/nvim-treesitter 
                  :nvim-tree/nvim-web-devicons]
-  :cmd "RenderMarkdown"
   :config (fn []
-            (let [md (require :render-markdown)]
+            (vim.cmd.RenderMarkdown)
+            (let [md (require "render-markdown")]
+              (md.enable)
               (md.setup {:latex {:enabled true
                                :converter "latex2text"
                                :highlight "RenderMarkdownMath"
