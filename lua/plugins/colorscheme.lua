@@ -2,4 +2,4 @@
 local function _1_()
   return vim.cmd.colorscheme("darkvoid")
 end
-return {{"aliqyan-21/darkvoid.nvim", dependencies = {"norcalli/nvim-colorizer.lua"}, config = _1_}}
+return {{"aliqyan-21/darkvoid.nvim", dependencies = {"norcalli/nvim-colorizer.lua", "EdenEast/nightfox.nvim"}, config = _1_}}

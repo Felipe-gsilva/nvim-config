@@ -14,10 +14,10 @@
          [:<leader>dh "<cmd>lua require('dap.ui.widgets').hover()<cr>" {:desc "DAP Hover"}]
          [:<leader>dp "<cmd>lua require('dap.ui.widgets').preview()<cr>" {:desc "DAP Preview"}]
          [:<leader>df #(let [widgets (require :dap.ui.widgets)]
-                        (widgets.centered_float (widgets.frames)))
+                         (widgets.centered_float (widgets.frames)))
           {:desc "DAP Frames"}]
          [:<leader>ds #(let [widgets (require :dap.ui.widgets)]
-                        (widgets.centered_float (widgets.scopes)))
+                         (widgets.centered_float (widgets.scopes)))
           {:desc "DAP Scopes"}]]
   :config (fn []
             (local dap (require :dap))
@@ -38,9 +38,9 @@
                  :position "bottom"}]
 
                :floating {:max_height 800
-                         :max_width 600
-                         :border "single"
-                         :mappings {:close "<ESC>"}}
+                          :max_width 600
+                          :border "single"
+                          :mappings {:close "<ESC>"}}
 
                :windows {:indent 2}
 
@@ -51,9 +51,14 @@
                :render {:indent 2
                         :max_value_lines 100}})
 
-            (set dap.listeners.after.event_initialized.dapui_config [(dapui.open)])
-            (set dap.listeners.before.event_terminated.dapui_config [(dapui.close)])
-            (set dap.listeners.before.event_exited.dapui_config [(dapui.close)])
+            (set dap.listeners.after.event_initialized.dapui_config
+                 [(fn [] (vim.schedule (fn [] (dapui.open))))])
+
+            (set dap.listeners.before.event_terminated.dapui_config
+                 [(fn [] (vim.schedule (fn [] (dapui.close))))])
+
+            (set dap.listeners.before.event_exited.dapui_config
+                 [(fn [] (vim.schedule (fn [] (dapui.close))))])
 
             ;; C/C++ configurations
             (set dap.configurations.c
