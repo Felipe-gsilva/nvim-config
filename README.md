@@ -6,3 +6,5 @@ I'm now testing out hyprland and some glitches (even more than regular) appeared
 installing this is pretty much just cloning this repo into your ~/.config/ folder and renaming it to ~/.config/nvim
 
 feel free to contribute to this repo or reach me out if you find any bad things
+
+my complete dotfiles can be found [here](https://github.com/Felipe-gsilva/dotfiles)
