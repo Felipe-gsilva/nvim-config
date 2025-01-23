@@ -8,3 +8,7 @@ installing this is pretty much just cloning this repo into your ~/.config/ folde
 feel free to contribute to this repo or reach me out if you find any bad things
 
 my complete dotfiles can be found [here](https://github.com/Felipe-gsilva/dotfiles)
+
+---
+
+> you can also find a list of useful commands [here](https://github.com/Felipe-gsilva/nvim-config/blob/main/common-commands.md) and some future improvements I want to make [here](https://github.com/Felipe-gsilva/nvim-config/blob/main/todo.md)
