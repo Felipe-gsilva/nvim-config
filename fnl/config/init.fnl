@@ -4,6 +4,15 @@
 ;space is reserved to be lead
 (vim.keymap.set :n :<space> :<nop> {:noremap true})
 
+; Explicit clipboard setup for Wayland
+(local clipboard
+  {:name "wl-clipboard"
+   :copy {:+ "wl-copy --type text/plain"}
+   :paste {:+ "wl-paste --no-newline"}
+   :cache_enabled true})
+
+(core.assoc vim.g :clipboard clipboard)
+
 ;sets a nvim global options
 (let [options
       {;tabs is space
