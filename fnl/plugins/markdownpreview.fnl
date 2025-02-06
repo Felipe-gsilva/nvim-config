@@ -6,9 +6,8 @@
             (let [md (require "render-markdown")]
               (md.enable)
               (md.setup {:latex {:enabled true
-                               :converter "latex2text"
-                               :highlight "RenderMarkdownMath"
-                               :top_pad 0
-                               :bottom_pad 0}})))}]
-
-;; TODO add latex 
+                                 :converter "latex2text"
+                                 :highlight "RenderMarkdownMath"
+                                 :right_pad  1
+                                 :top_pad 0
+                                 :bottom_pad 0}})))}]

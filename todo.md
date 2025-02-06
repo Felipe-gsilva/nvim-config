@@ -13,10 +13,8 @@
   - Merge conflict resolution
 
 ### UI Improvements
-- [ ] Install which-key.nvim for keybinding hints
 - [ ] Add indent-blankline.nvim for indent guides
-- [ ] Add nvim-colorizer.lua for color highlighting
-- [ ] Consider zen-mode.nvim for focused coding
+- [X] Add nvim-colorizer.lua for color highlighting
 
 ### Navigation Enhancements
 - [ ] Add hop.nvim or leap.nvim for quick motions
