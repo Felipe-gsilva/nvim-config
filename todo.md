@@ -3,11 +3,11 @@
 ## High Priority Enhancements
 
 ### Git Integration
-- [ ] Add gitsigns.nvim for inline git information
+- [X] Add gitsigns.nvim for inline git information
   - Inline blame
   - File changes in sign column
   - Stage/unstage hunks
-- [ ] Add vim-fugitive for git commands
+- [X] Add vim-fugitive for git commands
   - Branch management
   - Commit interface
   - Merge conflict resolution
