@@ -1,6 +1,7 @@
 [{1 :MeanderingProgrammer/render-markdown.nvim
   :dependencies [:nvim-treesitter/nvim-treesitter 
-                 :nvim-tree/nvim-web-devicons]
+                 :nvim-tree/nvim-web-devicons
+                 ]
   :config (fn []
             (vim.cmd.RenderMarkdown)
             (let [md (require "render-markdown")]

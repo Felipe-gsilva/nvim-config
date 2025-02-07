@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/plugins/markdownpreview.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] Compiled from fnl/plugins/render-markdown.fnl by https://github.com/Olical/nfnl, do not edit.
 local function _1_()
   vim.cmd.RenderMarkdown()
   local md = require("render-markdown")

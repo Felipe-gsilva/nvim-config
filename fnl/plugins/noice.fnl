@@ -1,6 +1,5 @@
 [{1 :folke/noice.nvim
-  :dependencies [:MunifTanjim/nui.nvim
-                 ]
+  :dependencies [:MunifTanjim/nui.nvim]
   :config (fn []
             (let [noice (require "noice")]
               (noice.setup {:views 

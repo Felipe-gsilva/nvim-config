@@ -13,12 +13,12 @@
   - Merge conflict resolution
 
 ### UI Improvements
-- [ ] Add indent-blankline.nvim for indent guides
 - [X] Add nvim-colorizer.lua for color highlighting
+- [ ] Add indent-blankline.nvim for indent guides
 
 ### Navigation Enhancements
 - [ ] Add hop.nvim or leap.nvim for quick motions
-- [ ] Install harpoon for quick file switching
+- [X] Install harpoon for quick file switching
 - [ ] Add aerial.nvim for code outline/symbol navigation
 
 ## Medium Priority Features
@@ -43,7 +43,7 @@
 
 ### Documentation & Note Taking
 - [ ] Consider obsidian.nvim integration
-- [ ] Add markdown-preview.nvim
+- [X] Add markdown-preview.nvim
 - [ ] Evaluate neorg for structured note-taking
 
 ### Quality of Life
