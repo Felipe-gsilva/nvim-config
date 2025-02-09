@@ -17,6 +17,8 @@
           (vim.keymap.set :n :<C-4> (fn [] (list:select 4)))
           (vim.keymap.set :n :<C-5> (fn [] (list:select 5)))
           (vim.keymap.set :n :<C-6> (fn [] (list:select 6)))
+          (vim.keymap.set :n :<C-7> (fn [] (list:select 7)))
+          (vim.keymap.set :n :<C-8> (fn [] (list:select 8)))
+          (vim.keymap.set :n :<C-9> (fn [] (list:select 9)))
           (vim.keymap.set :n :<C-S-P> (fn [] (list:prev)))
           (vim.keymap.set :n :<C-S-N> (fn [] (list:next))))}]
-

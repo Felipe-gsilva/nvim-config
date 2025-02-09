@@ -97,3 +97,9 @@
 - `<CR>` - Confirm completion
 - `<Tab>` - Next item/expand snippet
 - `<S-Tab>` - Previous item
+
+## Harpoon
+- `<leader>a` - adds a buffer into harpoon list
+- `<C-1>` - opens first harpoon buffer
+- `<C-2>` - opens second harpoon buffer and so on..
+- `<C-e>` - opens the list

@@ -1,8 +1,6 @@
 -- [nfnl] Compiled from fnl/plugins/render-markdown.fnl by https://github.com/Olical/nfnl, do not edit.
 local function _1_()
-  vim.cmd.RenderMarkdown()
   local md = require("render-markdown")
-  md.enable()
-  return md.setup({latex = {enabled = true, converter = "latex2text", highlight = "RenderMarkdownMath", right_pad = 1, top_pad = 0, bottom_pad = 0}})
+  return md.setup({file_types = {"markdown"}, latex = {enabled = true, top_pad = 1, bottom_pad = 0, highlight = "RenderMarkdownMath", converter = "latex2text", render_modes = false}})
 end
-return {{"MeanderingProgrammer/render-markdown.nvim", dependencies = {"nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons"}, config = _1_}}
+return {{"MeanderingProgrammer/render-markdown.nvim", dependencies = {"nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons", "latex-lsp/tree-sitter-latex"}, config = _1_}}

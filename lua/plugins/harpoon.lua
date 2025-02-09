@@ -39,12 +39,24 @@ local function _2_()
   end
   vim.keymap.set("n", "<C-6>", _10_)
   local function _11_()
+    return list:select(7)
+  end
+  vim.keymap.set("n", "<C-7>", _11_)
+  local function _12_()
+    return list:select(8)
+  end
+  vim.keymap.set("n", "<C-8>", _12_)
+  local function _13_()
+    return list:select(9)
+  end
+  vim.keymap.set("n", "<C-9>", _13_)
+  local function _14_()
     return list:prev()
   end
-  vim.keymap.set("n", "<C-S-P>", _11_)
-  local function _12_()
+  vim.keymap.set("n", "<C-S-P>", _14_)
+  local function _15_()
     return list:next()
   end
-  return vim.keymap.set("n", "<C-S-N>", _12_)
+  return vim.keymap.set("n", "<C-S-N>", _15_)
 end
 return {{"ThePrimeagen/harpoon", branch = "harpoon2", dependencies = {"nvim-lua/plenary.nvim"}, config = _1_, init = _2_}}

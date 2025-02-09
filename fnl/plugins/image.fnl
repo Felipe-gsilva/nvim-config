@@ -21,7 +21,6 @@
                                       :download_remote_images  true
                                       :only_render_image_at_cursor  false
                                       :filetypes [ "markdown" "vimwiki" ]
-                                      :resolve-image-path (fn [document-path image-path fallback])
-                                      }}})))}]
+                                      :resolve-image-path (fn [document-path image-path fallback])}}})))}]
 
 ;; TODO make image be rendered fgs
