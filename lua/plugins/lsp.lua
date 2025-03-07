@@ -41,6 +41,7 @@ local function _1_()
     return vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", ":lua require('telescope.builtin').lsp_implementations()<cr>", {noremap = true})
   end
   on_attach = _3_
+  lsp.pylsp.setup({on_attach = on_attach, handlers = handlers})
   local function _4_(pattern)
     local util = require("lspconfig.util")
     local fallback = vim.loop.cwd()
@@ -49,6 +50,7 @@ local function _1_()
     return (root or fallback)
   end
   lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities, root_dir = _4_})
-  return lsp.clangd.setup({on_attach = on_attach, capabilities = capabilities})
+  lsp.clangd.setup({on_attach = on_attach, capabilities = capabilities})
+  return lsp["typescript-language-server"].setup({on_attach = on_attach, capabilities = capabilities})
 end
 return {{"neovim/nvim-lspconfig", config = _1_}}

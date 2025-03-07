@@ -100,6 +100,6 @@
 
 ## Harpoon
 - `<leader>a` - adds a buffer into harpoon list
-- `<C-1>` - opens first harpoon buffer
-- `<C-2>` - opens second harpoon buffer and so on..
-- `<C-e>` - opens the list
+- `<C-w>` - opens first harpoon buffer
+- `<C-e>` - opens second harpoon buffer until `<C-t>`
+- `<C-q>` - opens the list

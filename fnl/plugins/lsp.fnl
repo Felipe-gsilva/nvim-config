@@ -55,8 +55,11 @@
                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>li ":lua require('telescope.builtin').lsp_implementations()<cr>" {:noremap true})))]
 
               ;; To add support to more language servers check:
-              ;; https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+              ;; https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 
+              ;; Python
+              (lsp.pylsp.setup {:on_attach on_attach
+                                :handlers handlers })
               ;; Clojure
               (lsp.clojure_lsp.setup {:on_attach on_attach
                                       :handlers handlers
@@ -71,4 +74,8 @@
                                                     (or root fallback)))})
               ;; C/C++
               (lsp.clangd.setup {:on_attach on_attach
-                                 :capabilities capabilities})))}]
+                                 :capabilities capabilities})
+
+              ;; JS/TS
+              (lsp.typescript-language-server.setup {:on_attach on_attach
+                                                     :capabilities capabilities})))}]
