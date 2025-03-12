@@ -94,5 +94,19 @@
                                       })
 
               ;; JS/TS
-              (lsp.typescript-language-server.setup {:on_attach on_attach
-                                                     :capabilities capabilities})))}]
+              (lsp.ts_ls.setup {:on_attach on_attach
+                                :capabilities capabilities
+                                :filetypes  ["javascript"
+                                             "typescript"
+                                             "vue"
+                                             "javascript"
+                                             "javascriptreact"
+                                             "javascript.jsx"
+                                             "typescript"
+                                             "typescriptreact"
+                                             "typescript.tsx"]})
+              
+              ;; Markdown
+              (lsp.markdown_oxide.setup {:on_attach on_attach 
+                                         :capabilities capabilities})
+              ))}]

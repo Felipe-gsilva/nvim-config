@@ -53,6 +53,7 @@ local function _1_()
   lsp.clangd.setup({on_attach = on_attach, capabilities = capabilities})
   lsp.html.setup({on_attach = on_attach, capabilities = capabilities, configurationSection = {"html", "css", "javascript"}, embeddedLanguages = {css = true, javascript = true, hugo = true}, provideFormatter = true})
   lsp.tailwindcss.setup({on_attach = on_attach, capabilities = capabilities, filetypes = {"aspnetcorerazor", "astro", "astro-markdown", "blade", "clojure", "django-html", "htmldjango", "edge", "eelixir", "elixir", "ejs", "erb", "eruby", "gohtml", "gohtmltmpl", "haml", "handlebars", "hbs", "html", "htmlangular", "html-eex", "heex", "jade", "leaf", "liquid", "markdown", "mdx", "mustache", "njk", "nunjucks", "php", "razor", "slim", "twig", "css", "less", "postcss", "sass", "scss", "stylus", "sugarss", "javascript", "javascriptreact", "reason", "rescript", "typescript", "typescriptreact", "vue", "svelte", "templ"}})
-  return lsp["typescript-language-server"].setup({on_attach = on_attach, capabilities = capabilities})
+  lsp.ts_ls.setup({on_attach = on_attach, capabilities = capabilities, filetypes = {"javascript", "typescript", "vue", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"}})
+  return lsp.markdown_oxide.setup({on_attach = on_attach, capabilities = capabilities})
 end
 return {{"neovim/nvim-lspconfig", config = _1_}}
