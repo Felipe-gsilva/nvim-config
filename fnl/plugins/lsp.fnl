@@ -59,7 +59,10 @@
 
               ;; Python
               (lsp.pylsp.setup {:on_attach on_attach
-                                :handlers handlers })
+                                :capabilities capabilities
+                                :settings {:pylsp {:pycodestyle {:ignore ["W391"]
+                                                                 :maxLineLength 100}}}
+                                 })
               ;; Clojure
               (lsp.clojure_lsp.setup {:on_attach on_attach
                                       :handlers handlers
@@ -74,7 +77,21 @@
                                                     (or root fallback)))})
               ;; C/C++
               (lsp.clangd.setup {:on_attach on_attach
-                                 :capabilities capabilities})
+                                 :capabilities capabilities
+                                 })
+
+              (lsp.html.setup {:on_attach on_attach
+                               :capabilities capabilities
+
+                               :configurationSection [ "html" "css" "javascript" ]
+                               :embeddedLanguages { :css  true
+                                                   :javascript  true
+                                                   :hugo true }
+                               :provideFormatter true})
+              (lsp.tailwindcss.setup {:on_attach on_attach
+                                      :capabilities capabilities
+                                      :filetypes [ "aspnetcorerazor" "astro" "astro-markdown" "blade" "clojure" "django-html" "htmldjango" "edge" "eelixir" "elixir" "ejs" "erb" "eruby" "gohtml" "gohtmltmpl" "haml" "handlebars" "hbs" "html" "htmlangular" "html-eex" "heex" "jade" "leaf" "liquid" "markdown" "mdx" "mustache" "njk" "nunjucks" "php" "razor" "slim" "twig" "css" "less" "postcss" "sass" "scss" "stylus" "sugarss" "javascript" "javascriptreact" "reason" "rescript" "typescript" "typescriptreact" "vue" "svelte" "templ" ]
+                                      })
 
               ;; JS/TS
               (lsp.typescript-language-server.setup {:on_attach on_attach

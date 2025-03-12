@@ -41,7 +41,7 @@ local function _1_()
     return vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", ":lua require('telescope.builtin').lsp_implementations()<cr>", {noremap = true})
   end
   on_attach = _3_
-  lsp.pylsp.setup({on_attach = on_attach, handlers = handlers})
+  lsp.pylsp.setup({on_attach = on_attach, capabilities = capabilities, settings = {pylsp = {pycodestyle = {ignore = {"W391"}, maxLineLength = 100}}}})
   local function _4_(pattern)
     local util = require("lspconfig.util")
     local fallback = vim.loop.cwd()
@@ -51,6 +51,8 @@ local function _1_()
   end
   lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities, root_dir = _4_})
   lsp.clangd.setup({on_attach = on_attach, capabilities = capabilities})
+  lsp.html.setup({on_attach = on_attach, capabilities = capabilities, configurationSection = {"html", "css", "javascript"}, embeddedLanguages = {css = true, javascript = true, hugo = true}, provideFormatter = true})
+  lsp.tailwindcss.setup({on_attach = on_attach, capabilities = capabilities, filetypes = {"aspnetcorerazor", "astro", "astro-markdown", "blade", "clojure", "django-html", "htmldjango", "edge", "eelixir", "elixir", "ejs", "erb", "eruby", "gohtml", "gohtmltmpl", "haml", "handlebars", "hbs", "html", "htmlangular", "html-eex", "heex", "jade", "leaf", "liquid", "markdown", "mdx", "mustache", "njk", "nunjucks", "php", "razor", "slim", "twig", "css", "less", "postcss", "sass", "scss", "stylus", "sugarss", "javascript", "javascriptreact", "reason", "rescript", "typescript", "typescriptreact", "vue", "svelte", "templ"}})
   return lsp["typescript-language-server"].setup({on_attach = on_attach, capabilities = capabilities})
 end
 return {{"neovim/nvim-lspconfig", config = _1_}}
