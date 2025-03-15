@@ -60,9 +60,11 @@
               ;; Python
               (lsp.pylsp.setup {:on_attach on_attach
                                 :capabilities capabilities
-                                :settings {:pylsp {:pycodestyle {:ignore ["W391"]
-                                                                 :maxLineLength 100}}}
-                                 })
+                                :settings {:pylsp
+                                           {:plugins 
+                                            {:pycodestyle
+                                             {:ignore ["W391" "W293" "E302"]
+                                              :maxLineLength 150}}}}})
               ;; Clojure
               (lsp.clojure_lsp.setup {:on_attach on_attach
                                       :handlers handlers
@@ -80,6 +82,7 @@
                                  :capabilities capabilities
                                  })
 
+              ;; HTML
               (lsp.html.setup {:on_attach on_attach
                                :capabilities capabilities
 
@@ -88,6 +91,7 @@
                                                    :javascript  true
                                                    :hugo true }
                                :provideFormatter true})
+              ;; tailwindcss
               (lsp.tailwindcss.setup {:on_attach on_attach
                                       :capabilities capabilities
                                       :filetypes [ "aspnetcorerazor" "astro" "astro-markdown" "blade" "clojure" "django-html" "htmldjango" "edge" "eelixir" "elixir" "ejs" "erb" "eruby" "gohtml" "gohtmltmpl" "haml" "handlebars" "hbs" "html" "htmlangular" "html-eex" "heex" "jade" "leaf" "liquid" "markdown" "mdx" "mustache" "njk" "nunjucks" "php" "razor" "slim" "twig" "css" "less" "postcss" "sass" "scss" "stylus" "sugarss" "javascript" "javascriptreact" "reason" "rescript" "typescript" "typescriptreact" "vue" "svelte" "templ" ]

@@ -41,7 +41,7 @@ local function _1_()
     return vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", ":lua require('telescope.builtin').lsp_implementations()<cr>", {noremap = true})
   end
   on_attach = _3_
-  lsp.pylsp.setup({on_attach = on_attach, capabilities = capabilities, settings = {pylsp = {pycodestyle = {ignore = {"W391"}, maxLineLength = 100}}}})
+  lsp.pylsp.setup({on_attach = on_attach, capabilities = capabilities, settings = {pylsp = {plugins = {pycodestyle = {ignore = {"W391", "W293", "E302"}, maxLineLength = 150}}}}})
   local function _4_(pattern)
     local util = require("lspconfig.util")
     local fallback = vim.loop.cwd()
