@@ -5,9 +5,4 @@
                   :MunifTanjim/nui.nvim
                   :3rd/image.nvim]
    :config (fn []
-             (vim.keymap.set :n "<leader>ff" ":Neotree toggle<CR>" {:noremap true :silent true})
-             (vim.api.nvim_create_autocmd "VimEnter"
-               {:callback (fn []
-                            (let [bufname (vim.fn.expand "%")]
-                              (when (or (= bufname "") (vim.fn.isdirectory bufname))
-                                (vim.cmd "Neotree"))))})) }]
+             (vim.keymap.set :n "<leader>ff" ":Neotree toggle<CR>" {:noremap true :silent true}))}]

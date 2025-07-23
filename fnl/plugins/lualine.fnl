@@ -4,24 +4,26 @@
 (fn lsp_connection []
   (let [message (lsp.get-progress-message)]
     (if
-      ; if has progress handler and is loading
       (or (= message.status "begin")
           (= message.status "report"))
       (.. message.msg " : " message.percent "%% ")
-
-      ; if has progress handler and finished loading
       (= message.status "end")
       ""
-
-      ; if hasn't progress handler, but has connected lsp client
       (and (= message.status "")
-           (not (vim.tbl_isempty (vim.lsp.buf_get_clients 0))))
+           (not (vim.tbl_isempty (vim.lsp.get_clients {:bufnr 0}))))
       ""
-
-      ; else
       "")))
 
+(local copilot_component
+       {:provider (fn []
+                    (let [copilot (require :copilot)]
+                      (if (copilot.is_enabled)
+                          (if (copilot.is_working) " " "")
+                          "")))
+        :hl {:fg "#66C2FF"}})
+
 [{1 :nvim-lualine/lualine.nvim
+  :event "VimEnter"
   :config (fn []
             (let [lualine (require :lualine)]
               (lualine.setup

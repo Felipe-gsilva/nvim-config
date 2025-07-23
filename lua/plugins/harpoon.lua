@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/plugins/harpoon.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/plugins/harpoon.fnl
 local function _1_()
   local harpoon = require("harpoon")
   return harpoon.setup({})

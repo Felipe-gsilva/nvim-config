@@ -6,7 +6,7 @@
               (harpoon.setup {})))
   :init (fn []
           (local harpoon (require :harpoon))
-          (local list (harpoon:list))  ; Store the list instance
+          (local list (harpoon:list))
 
           ;; Keymaps with proper API calls
           (vim.keymap.set :n :<leader>a (fn [] (list:add)))

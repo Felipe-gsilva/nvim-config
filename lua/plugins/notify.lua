@@ -1,6 +1,7 @@
--- [nfnl] Compiled from fnl/plugins/notify.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/plugins/notify.fnl
 local function _1_()
   local notify = require("notify")
-  return notify.setup({timeout = 2000, render = "minimal", fps = 60, animate = false})
+  vim.notify = notify
+  return notify.setup({timeout = 2000, render = "minimal"})
 end
-return {{"rcarriga/nvim-notify", config = _1_}}
+return {{"rcarriga/nvim-notify", event = "VeryLazy", config = _1_}}
