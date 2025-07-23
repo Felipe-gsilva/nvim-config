@@ -17,7 +17,6 @@
 - [ ] Add indent-blankline.nvim for indent guides
 
 ### Navigation Enhancements
-- [ ] Add hop.nvim or leap.nvim for quick motions
 - [X] Install harpoon for quick file switching
 - [ ] Add aerial.nvim for code outline/symbol navigation
 
@@ -36,7 +35,7 @@
 
 ### Project Management
 - [ ] Add project.nvim
-- [ ] Install todo-comments.nvim
+- [X] Install todo-comments.nvim
 - [ ] Add trouble.nvim for better problem management
 
 ## Future Considerations
