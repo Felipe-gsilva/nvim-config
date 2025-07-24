@@ -10,9 +10,9 @@ local function _1_()
     else
       local icon = devicons.get_icon(filename)
       if icon then
-        return (icon .. " ")
+        return (icon .. "  ")
       else
-        return "\239\133\156 "
+        return " \239\133\156 "
       end
     end
   end

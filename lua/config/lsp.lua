@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/config/lsp.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/config/lsp.fnl
 local progress_message = {status = "", percent = 0, msg = ""}
 local function get_progress_message()
   return progress_message

@@ -10,8 +10,8 @@
                                  " "
                                  (let [icon (devicons.get_icon filename)]
                                    (if icon
-                                     (.. icon " ")
-                                     " ")))))})
+                                     (.. icon "  ")
+                                     "  ")))))})
               (local RelativeFileBreadcrumbs
                 {:provider (fn []
                              (let [path (vim.fn.expand "%:.")]
