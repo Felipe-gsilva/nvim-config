@@ -5,6 +5,7 @@
               (set vim.notify notify)
 
               (notify.setup
-                {
-                 :timeout 2000
-                 :render "minimal"}))) }]
+                {:timeout 2000
+                 :render "minimal"
+                 :max_width 50
+                 :max_height 10}))) }]
