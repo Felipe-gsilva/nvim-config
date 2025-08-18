@@ -53,7 +53,9 @@
                   (server-config.setup {:on_attach on_attach :capabilities capabilities :handlers handlers})))
 
               ;; --- 5. Apply server-specific settings AFTER the loop ---
-              (lsp.pylsp.setup {:settings {:pylsp {:plugins {:pycodestyle {:ignore ["W391" "W293" "E302"] :maxLineLength 150}}}}})
+              (lsp.pylsp.setup {:settings {:pylsp {:plugins {:pycodestyle {:ignore ["W391" "W293" "E302"] 
+                                                                           :maxLineLength 150}}}}})
+
               (lsp.clojure_lsp.setup
                 {:before_init (fn [params] (set params.workDoneToken :1))
                  :root_dir (fn [pattern]
@@ -62,6 +64,9 @@
                                    patterns [:project.clj :deps.edn :build.boot :shadow-cljs.edn :.git :bb.edn]
                                    root ((util.root_pattern patterns) pattern)]
                                (or root fallback)))})
+
               (lsp.html.setup {:configurationSection ["html" "css" "javascript"] :embeddedLanguages {:css true :javascript true :hugo true} :provideFormatter true})
+
               (lsp.tailwindcss.setup {:filetypes ["aspnetcorerazor" "astro" "astro-markdown" "blade" "clojure" "django-html" "htmldjango" "edge" "eelixir" "elixir" "ejs" "erb" "eruby" "gohtml" "gohtmltmpl" "haml" "handlebars" "hbs" "html" "htmlangular" "html-eex" "heex" "jade" "leaf" "liquid" "markdown" "mdx" "mustache" "njk" "nunjucks" "php" "razor" "slim" "twig" "css" "less" "postcss" "sass" "scss" "stylus" "sugarss" "javascript" "javascriptreact" "reason" "rescript" "typescript" "typescriptreact" "vue" "svelte" "templ"]})
-              (lsp.ts_ls.setup {:filetypes ["javascript" "typescript" "vue" "javascriptreact" "javascript.jsx" "typescriptreact" "typescript.tsx"]}))) }]
+
+              (lsp.ts_ls.setup {:filetypes ["javascript" "typescript" "vue" "javascriptreact" "javascript.jsx" "typescriptreact" "typescript.tsx"]})))}]
