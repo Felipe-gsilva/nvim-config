@@ -2,6 +2,8 @@
 local function _1_()
   local lsp = require("lspconfig")
   local cmplsp = require("cmp_nvim_lsp")
+  local mason = require("mason")
+  local mason_lspconfig = require("mason-lspconfig")
   local on_attach
   local function _2_(client, bufnr)
     local map
@@ -34,18 +36,15 @@ local function _1_()
   end
   on_attach = _2_
   local capabilities = cmplsp.default_capabilities()
-  local handlers = {["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = "single"}), ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"})}
-  local servers = {"pylsp", "clojure_lsp", "clangd", "html", "tailwindcss", "ts_ls", "markdown_oxide"}
   vim.diagnostic.config({underline = true, update_in_insert = true, severity_sort = true, virtual_text = false})
   vim.fn.sign_define("DiagnosticSignError", {text = "\239\129\151", texthl = "DiagnosticSignError"})
   vim.fn.sign_define("DiagnosticSignWarn", {text = "\239\129\177", texthl = "DiagnosticSignWarn"})
   vim.fn.sign_define("DiagnosticSignInfo", {text = "\239\129\154", texthl = "DiagnosticSignInfo"})
-  vim.fn.sign_define("DiagnosticSignHint", {text = "\239\129\153", texthl = "DiagnosticSignHint"})
-  for _, server_name in ipairs(servers) do
-    local server_config = lsp[server_name]
-    server_config.setup({on_attach = on_attach, capabilities = capabilities, handlers = handlers})
-  end
-  lsp.pylsp.setup({settings = {pylsp = {plugins = {pycodestyle = {ignore = {"W391", "W293", "E302"}, maxLineLength = 150}}}}})
+  mason.setup({})
+  mason_lspconfig.setup({ensure_installed = {"pyright", "clojure_lsp", "clangd", "html"}})
+  lsp.pyright.setup({on_attach = on_attach, capabilities = capabilities})
+  lsp.clangd.setup({on_attach = on_attach, capabilities = capabilities})
+  lsp.html.setup({on_attach = on_attach, capabilities = capabilities, provideFormatter = true})
   local function _5_(params)
     params.workDoneToken = "1"
     return nil
@@ -57,9 +56,6 @@ local function _1_()
     local root = util.root_pattern(patterns)(pattern)
     return (root or fallback)
   end
-  lsp.clojure_lsp.setup({before_init = _5_, root_dir = _6_})
-  lsp.html.setup({configurationSection = {"html", "css", "javascript"}, embeddedLanguages = {css = true, javascript = true, hugo = true}, provideFormatter = true})
-  lsp.tailwindcss.setup({filetypes = {"aspnetcorerazor", "astro", "astro-markdown", "blade", "clojure", "django-html", "htmldjango", "edge", "eelixir", "elixir", "ejs", "erb", "eruby", "gohtml", "gohtmltmpl", "haml", "handlebars", "hbs", "html", "htmlangular", "html-eex", "heex", "jade", "leaf", "liquid", "markdown", "mdx", "mustache", "njk", "nunjucks", "php", "razor", "slim", "twig", "css", "less", "postcss", "sass", "scss", "stylus", "sugarss", "javascript", "javascriptreact", "reason", "rescript", "typescript", "typescriptreact", "vue", "svelte", "templ"}})
-  return lsp.ts_ls.setup({filetypes = {"javascript", "typescript", "vue", "javascriptreact", "javascript.jsx", "typescriptreact", "typescript.tsx"}})
+  return lsp.clojure_lsp.setup({on_attach = on_attach, capabilities = capabilities, before_init = _5_, root_dir = _6_})
 end
-return {{"neovim/nvim-lspconfig", event = "BufReadPre", dependencies = {"folke/neodev.nvim"}, config = _1_}}
+return {{"neovim/nvim-lspconfig", event = "BufReadPre", dependencies = {"folke/neodev.nvim", "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim"}, config = _1_}}
