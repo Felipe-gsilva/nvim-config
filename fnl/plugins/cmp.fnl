@@ -38,13 +38,14 @@
                                     :<C-e> (cmp.mapping.close)
                                     :<CR> (cmp.mapping.confirm {:behavior cmp.ConfirmBehavior.Insert
                                                                 :select true})
-                                    :<Tab> (cmp.mapping (fn [fallback]
-                                                          (if
-                                                            (cmp.visible) (cmp.select_next_item)
-                                                            (luasnip.expand_or_jumpable) (luasnip.expand_or_jump)
-                                                            (has-words-before) (cmp.complete)
-                                                            :else (fallback)))
-                                                        {1 :i 2 :s})
+                                    :<Tab> (cmp.mapping
+                                             (fn [fallback]
+                                               (cond
+                                                 (cmp.visible) (cmp.select_next_item)
+                                                 (luasnip.expand_or_jumpable) (luasnip.expand_or_jump)
+                                                 (has-words-before) (cmp.complete)
+                                                 true (fallback)))
+                                             [:i :s])
                                     :<S-Tab> (cmp.mapping (fn [fallback]
                                                             (if
                                                               (cmp.visible) (cmp.select_prev_item)
