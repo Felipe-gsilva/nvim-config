@@ -13,9 +13,19 @@ local function _1_()
     return item
   end
   local function _3_(fallback)
-    return cond(cmp.visible(), cmp.select_next_item(), luasnip.expand_or_jumpable(), luasnip.expand_or_jump(), has_words_before(), cmp.complete(), true, fallback())
+    if cmp.visible() then
+      return cmp.select_next_item()
+    elseif luasnip.expand_or_jumpable() then
+      return luasnip.expand_or_jump()
+    elseif has_words_before() then
+      return cmp.complete()
+    elseif "else" then
+      return fallback()
+    else
+      return nil
+    end
   end
-  local function _4_(fallback)
+  local function _5_(fallback)
     if cmp.visible() then
       return cmp.select_prev_item()
     elseif luasnip.jumpable(-1) then
@@ -26,9 +36,9 @@ local function _1_()
       return nil
     end
   end
-  local function _6_(args)
+  local function _7_(args)
     return luasnip.lsp_expand(args.body)
   end
-  return cmp.setup({formatting = {format = _2_}, mapping = {["<C-b>"] = cmp.mapping.select_prev_item(), ["<C-n>"] = cmp.mapping.select_next_item(), ["<C-bb>"] = cmp.mapping.scroll_docs(( - 4)), ["<C-f>"] = cmp.mapping.scroll_docs(4), ["<C-Space>"] = cmp.mapping.complete(), ["<C-e>"] = cmp.mapping.close(), ["<CR>"] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Insert, select = true}), ["<Tab>"] = cmp.mapping(_3_, {"i", "s"}), ["<S-Tab>"] = cmp.mapping(_4_, {"i", "s"})}, snippet = {expand = _6_}, sources = cmp_srcs})
+  return cmp.setup({formatting = {format = _2_}, mapping = {["<C-b>"] = cmp.mapping.select_prev_item(), ["<C-n>"] = cmp.mapping.select_next_item(), ["<C-bb>"] = cmp.mapping.scroll_docs(( - 4)), ["<C-f>"] = cmp.mapping.scroll_docs(4), ["<C-Space>"] = cmp.mapping.complete(), ["<C-e>"] = cmp.mapping.close(), ["<CR>"] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Insert, select = true}), ["<Tab>"] = cmp.mapping(_3_, {"i", "s"}), ["<S-Tab>"] = cmp.mapping(_5_, {"i", "s"})}, snippet = {expand = _7_}, sources = cmp_srcs})
 end
 return {{"hrsh7th/nvim-cmp", dependencies = {"hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-vsnip", "PaterJason/cmp-conjure", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip"}, config = _1_}}
