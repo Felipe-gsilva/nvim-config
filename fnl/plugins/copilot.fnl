@@ -5,7 +5,7 @@
             (let [copilot (require :copilot)]
               (copilot.setup
                 {
-                 :panel {:enabled true
+                 :panel {:enabled false
                          :auto_refresh true
                          :keymap {:jump_prev "<M-[>"
                                   :jump_next "<M-]>"
@@ -23,7 +23,10 @@
                                        :prev "<M-[>"
                                        :dismiss "<C-]>"}}
 
-                 :filetypes {:yaml {:suggestion {:enabled false}}
+                 :filetypes {:c {:suggestion {:enabled false}}
+                             :cpp {:suggestion {:enabled false}}
+                             :python {:suggestion {:enabled false}}
+                             :yaml {:suggestion {:enabled false}}
                              :markdown {:suggestion {:enabled false}}
                              :help {:suggestion {:enabled false}}
                              :TelescopePrompt {:suggestion {:enabled false}}}})))

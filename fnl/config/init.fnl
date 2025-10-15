@@ -15,7 +15,7 @@
        :smartcase true
        :clipboard "unnamedplus"
        :ruler true
-       :number true 
+       :number true
        :relativenumber true
        :termguicolors true}]
   (each [option value (pairs options)]
