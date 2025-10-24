@@ -7,13 +7,11 @@
                 {
                  :panel {:enabled false
                          :auto_refresh true
-                         :keymap {:jump_prev "<M-[>"
-                                  :jump_next "<M-]>"
-                                  :accept "<CR>"
+                         :keymap {:accept "<CR>"
                                   :refresh "<M-r>"
                                   :open "<M-p>"}}
 
-                 :suggestion {:enabled true
+                 :suggestion {:enabled false
                               :auto_trigger true
                               :debounce 45
                               :keymap {:accept "<Right>"
@@ -32,4 +30,4 @@
                              :TelescopePrompt {:suggestion {:enabled false}}}})))
 
   :keys [[:<leader>cc :<cmd>Copilot<CR> {:desc "Copilot: Toggle"}]
-         [:<leader>cp "<cmd>Copilot panel<CR>" {:desc "Copilot: Open Panel"}]]}]
+         [:fleader>cp "<cmd>Copilot panel<CR>" {:desc "Copilot: Open Panel"}]]}]
