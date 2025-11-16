@@ -11,7 +11,7 @@
                                   :refresh "<M-r>"
                                   :open "<M-p>"}}
 
-                 :suggestion {:enabled false
+                 :suggestion {:enabled true
                               :auto_trigger true
                               :debounce 45
                               :keymap {:accept "<Right>"

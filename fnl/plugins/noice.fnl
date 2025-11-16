@@ -4,14 +4,14 @@
             (let [noice (require "noice")]
               (noice.setup {:views 
                             {:cmdline_popup {:position 
-                                             {:row 18 
+                                             {:row "50%" 
                                               :col "50%"}
                                              :size 
-                                             {:width 60
+                                             {:width "auto"
                                               :height "auto"}}
                              :popupmenu {:relative "editor"
-                                         :size {:width 60
-                                                :height 10}
+                                         :size {:width "40%"
+                                                :height "auto"}
                                          :position {:row 21 
                                                     :col "50%"}
                                          :border {:style "rounded"}
