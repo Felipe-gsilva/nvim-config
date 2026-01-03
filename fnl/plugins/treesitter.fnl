@@ -1,4 +1,5 @@
 [{1 :nvim-treesitter/nvim-treesitter
+  :branch "main"
   :build ":TSUpdate"
   :config (fn []
             (let [treesitter (require :nvim-treesitter.configs)]
@@ -6,6 +7,7 @@
                 {:highlight {:enable true}
                  :indent {:enable true}
                  :ensure_installed [:bash
+                                    :c
                                     :clojure
                                     :commonlisp
                                     :dockerfile
@@ -16,4 +18,5 @@
                                     :json
                                     :lua
                                     :markdown
+                                    :python
                                     :yaml]})))}]

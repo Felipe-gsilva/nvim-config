@@ -2,7 +2,6 @@
    :branch "v3.x"
    :dependencies [:nvim-lua/plenary.nvim
                   :nvim-tree/nvim-web-devicons
-                  :MunifTanjim/nui.nvim
-                  :3rd/image.nvim]
+                  :MunifTanjim/nui.nvim]
    :config (fn []
              (vim.keymap.set :n "<leader>ff" ":Neotree toggle<CR>" {:noremap true :silent true}))}]
