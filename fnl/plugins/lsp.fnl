@@ -2,6 +2,7 @@
   :event "BufReadPre"
   :dependencies [:folke/neodev.nvim
                  :williamboman/mason.nvim
+                 :hrsh7th/cmp-nvim-lsp
                  :williamboman/mason-lspconfig.nvim]
   :config (fn []
             (let [lsp (require :lspconfig)

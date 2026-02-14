@@ -58,4 +58,4 @@ local function _1_()
   end
   return lsp.clojure_lsp.setup({on_attach = on_attach, capabilities = capabilities, before_init = _5_, root_dir = _6_})
 end
-return {{"neovim/nvim-lspconfig", event = "BufReadPre", dependencies = {"folke/neodev.nvim", "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim"}, config = _1_}}
+return {{"neovim/nvim-lspconfig", event = "BufReadPre", dependencies = {"folke/neodev.nvim", "williamboman/mason.nvim", "hrsh7th/cmp-nvim-lsp", "williamboman/mason-lspconfig.nvim"}, config = _1_}}
