@@ -1,7 +1,7 @@
 [{1 :nvim-treesitter/nvim-treesitter
   :build ":TSUpdate"
   :config (fn []
-            (let [treesitter (require :nvim-treesitter.configs)]
+            (let [treesitter (require :nvim-treesitter.config)]
               (treesitter.setup 
                 {:highlight {:enable true}
                  :indent {:enable true}
