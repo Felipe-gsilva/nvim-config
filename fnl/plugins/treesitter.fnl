@@ -22,6 +22,7 @@
                                     :javascript
                                     :json
                                     :lua
+                                    :latex
                                     :markdown
-                                    :rust
+                                    :markdown_inline
                                     :yaml]})))}]

@@ -87,16 +87,18 @@
 ## Other Tools
 - `<leader>u` - Toggle Undotree
 
-## Completion (nvim-cmp)
-- `<C-b>` - Select previous item
-- `<C-n>` - Select next item
-- `<C-bb>` - Scroll docs up
-- `<C-f>` - Scroll docs down
-- `<C-Space>` - Complete
-- `<C-e>` - Close completion
+## Markdown & LaTeX
+- `<leader>p` - Nabla: Floating preview of LaTeX formula under cursor
+- `<leader>P` - Nabla: Toggle inline math virtual text across buffer
+- `,ll` - VimTeX: Toggle continuous LaTeX compilation (`:VimtexCompile`)
+- `,lv` - VimTeX: Forward search to cursor position in Zathura (`:VimtexView`)
+- `Ctrl + Left Click` (in Zathura) - Inverse search (jumps back to source line in Neovim)
+
+## Completion (blink.cmp)
 - `<CR>` - Confirm completion
-- `<Tab>` - Next item/expand snippet
-- `<S-Tab>` - Previous item
+- `<Tab>` - Next item / expand snippet
+- `<C-Space>` - Trigger completion menu
+- Ghost text is enabled for inline suggestions
 
 ## Harpoon
 - `<leader>a` - adds a buffer into harpoon list

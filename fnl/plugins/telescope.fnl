@@ -1,9 +1,10 @@
 [{1 :nvim-telescope/telescope.nvim
   :dependencies [:nvim-telescope/telescope-ui-select.nvim
+                 {1 :nvim-telescope/telescope-fzf-native.nvim :build "make"}
                  :nvim-lua/popup.nvim
                  :nvim-lua/plenary.nvim]
   :init (fn []
-          (vim.keymap.set :n :<C-p>":lua require('telescope.builtin').find_files()<CR>" {:noremap true})
+          (vim.keymap.set :n :<C-p> ":lua require('telescope.builtin').find_files()<CR>" {:noremap true})
           (vim.keymap.set :n :<leader>fg ":lua require('telescope.builtin').live_grep()<CR>" {:noremap true})
           (vim.keymap.set :n :<leader>fb ":lua require('telescope.builtin').buffers()<CR>" {:noremap true})
           (vim.keymap.set :n :<leader>fh ":lua require('telescope.builtin').help_tags()<CR>" {:noremap true}))
@@ -27,4 +28,5 @@
                                                                       "--iglob"
                                                                       "!.git"
                                                                       "--hidden"]}}})
-              (telescope.load_extension "ui-select")))}]
+              (telescope.load_extension "ui-select")
+              (pcall (fn [] (telescope.load_extension "fzf")))))}]

@@ -10,5 +10,5 @@ my complete dotfiles can be found [here](https://github.com/Felipe-gsilva/dotfil
 
 ---
 
-> you can also find a list of useful commands [here](./docs/common-commands.md) and some future improvements I want to make [here](./docs/todo.md)
+> Check out the [Advanced Cheatsheet & Guide](./docs/cheatsheet.md), the list of commands [here](./docs/common-commands.md) and future improvements [here](./docs/todo.md)
 

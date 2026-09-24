@@ -14,45 +14,47 @@
 
 ### UI Improvements
 - [X] Add nvim-colorizer.lua for color highlighting
-- [ ] Add indent-blankline.nvim for indent guides
+- [X] Add indent-blankline.nvim for indent guides & scope highlighting
 
-### Navigation Enhancements
+### Navigation & Motion Enhancements
 - [X] Install harpoon for quick file switching
-- [ ] Add aerial.nvim for code outline/symbol navigation
+- [X] Add aerial.nvim for code outline/symbol navigation
+- [X] Add flash.nvim for high-speed motions and treesitter selection
+- [X] Add telescope-fzf-native.nvim for fast C-based fuzzy matching
 
 ## Medium Priority Features
 
+### Editing & Delimiters
+- [X] Add nvim-surround for fast delimiter manipulation
+- [X] Add conform.nvim for asynchronous formatting (Prettier, Biome, Stylua, Black, Latexindent)
+
 ### Terminal Integration
-- [ ] Add toggleterm.nvim
-  - Floating terminal support
-  - Multiple terminal management
-  - Custom terminal shortcuts
+- [ ] Terminal integration (Using tmux via vim-tmux-navigator; toggleterm intentionally omitted)
 
 ### Testing Support
-- [ ] Set up neotest framework
-- [ ] Configure language-specific test runners
-- [ ] Add test result visualization
+- [X] Set up neotest framework
+  - [X] Configure test runners (neotest-jest)
+  - [X] Add test result visualization & summary panel
 
-### Project Management
+### Project Management & Diagnostics
 - [ ] Add project.nvim
 - [X] Install todo-comments.nvim
-- [ ] Add trouble.nvim for better problem management
+- [X] Add trouble.nvim for diagnostics & problem management
 
 ## Future Considerations
 
 ### Documentation & Note Taking
-- [ ] Consider obsidian.nvim integration
-- [X] Add markdown-preview.nvim
-- [ ] Evaluate neorg for structured note-taking
+- [X] In-buffer Markdown & LaTeX rendering (render-markdown.nvim + nabla.nvim)
+- [X] LaTeX continuous compilation & SyncTeX with Zathura (vimtex)
 
 ### Quality of Life
+- [X] Add highlight on yank and centered navigation keymaps
+- [X] Add session management (persistence.nvim)
 - [ ] Add more snippets for common patterns
 - [ ] Improve startup time
 - [ ] Create custom statusline
-- [ ] Add session management
 
 ## Maintenance
+- [X] Document all custom keybindings and advanced cheatsheet
 - [ ] Regular plugin updates
 - [ ] Configuration cleanup
-- [ ] Document all custom keybindings
-- [ ] Create backup strategy for config 
