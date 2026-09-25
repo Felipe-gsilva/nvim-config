@@ -17,8 +17,12 @@
        :ruler true
        :number true
        :relativenumber true
-       :termguicolors true}]
+       :termguicolors true }]
   (each [option value (pairs options)]
     (core.assoc vim.o option value)))
+
+;setting vim.g options
+(set vim.g.loaded_perl_provider 0)
+(set vim.g.loaded_ruby_provider 0)
 
 {}
