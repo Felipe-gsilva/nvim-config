@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/plugins/colorizer.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/plugins/colorizer.fnl
 local function _1_()
   local color = require("colorizer")
   return color.setup({})

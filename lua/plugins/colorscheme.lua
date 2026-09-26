@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/plugins/colorscheme.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/plugins/colorscheme.fnl
 local function _1_()
   return vim.cmd.colorscheme("nightfox")
 end

@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/plugins/undotree.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/plugins/undotree.fnl
 local function _1_()
   return vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", {noremap = true, silent = true})
 end

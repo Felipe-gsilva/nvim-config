@@ -9,6 +9,10 @@ local function _2_()
   local telescope = require("telescope")
   local themes = require("telescope.themes")
   telescope.setup({defaults = {file_ignore_patterns = {"node_modules"}, vimgrep_arguments = {"rg", "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case", "--iglob", "!.git", "--hidden"}}, extensions = {["ui-select"] = {themes.get_dropdown({})}}, pickers = {find_files = {find_command = {"rg", "--files", "--iglob", "!.git", "--hidden"}}}})
-  return telescope.load_extension("ui-select")
+  telescope.load_extension("ui-select")
+  local function _3_()
+    return telescope.load_extension("fzf")
+  end
+  return pcall(_3_)
 end
-return {{"nvim-telescope/telescope.nvim", dependencies = {"nvim-telescope/telescope-ui-select.nvim", "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}, init = _1_, config = _2_}}
+return {{"nvim-telescope/telescope.nvim", dependencies = {"nvim-telescope/telescope-ui-select.nvim", {"nvim-telescope/telescope-fzf-native.nvim", build = "make"}, "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim"}, init = _1_, config = _2_}}

@@ -1,2 +1,2 @@
 -- [nfnl] fnl/plugins/render-markdown.fnl
-return {{"nvim-treesitter/nvim-treesitter", dependencies = {"OXY2DEV/markview.nvim"}, lazy = false}}
+return {{"MeanderingProgrammer/render-markdown.nvim", dependencies = {"nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons"}, ft = {"markdown"}, opts = {latex = {enabled = true}}}}

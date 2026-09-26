@@ -1,2 +1,2 @@
--- [nfnl] Compiled from fnl/plugins/vim-fugitive.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/plugins/vim-fugitive.fnl
 return {{"tpope/vim-fugitive"}}

@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/plugins/dap.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/plugins/dap.fnl
 local function _1_()
   return "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>"
 end
